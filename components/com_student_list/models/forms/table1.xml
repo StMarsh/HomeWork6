@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_STUDENT_LIST_FORM_LBL_TABLE1_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_CREATED_BY"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_CREATED_BY"  /> 
+
+       <field name="name_lastname" type="text"
+                
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_NAME_LASTNAME"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_NAME_LASTNAME" 
+                
+                
+                 required="true" 
+            class="name"
+            filter="raw" /> 
+
+       <field name="information" type="textarea"
+                
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_INFORMATION"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_INFORMATION" 
+                
+                
+                
+            cols="100"
+            rows="8"
+            filter="safehtml" /> 
+
+       <field name="birthday" type="calendar" class="inputbox"
+         required="true" 
+        
+         default="1986-01-01" 
+        
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_BIRTHDAY"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_BIRTHDAY" 
+        filter="safehtml" /> 
+
+       <field name="gender" type="list"
+                
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_GENDER"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_GENDER" 
+                 default="none" 
+                
+                 required="true" 
+            filter="raw">
+                <option value="none">-</option>
+                <option value="Чоловіча">Чоловіча</option>
+                <option value="Жіноча">Жіноча</option>
+        </field> 
+
+ 
+		<field name="filter_gender" type="list" onchange="this.form.submit();">
+			<option value="">COM_STUDENT_LIST_LISTS_GENDER_FILTER</option>
+			<option value="none">-</option>
+			<option value="Чоловіча">Чоловіча</option>
+			<option value="Жіноча">Жіноча</option>
+		</field> 
+
+       <field name="group" type="text"
+                
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_GROUP"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_GROUP" 
+                
+                
+                 required="true"  /> 
+
+       <field name="gpa" type="text" size="40" class="inputbox"
+        
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_GPA"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_GPA" 
+        
+        
+        
+        filter="safehtml" /> 
+
+       <field name="number_of_academic_records" type="text" size="40" class="inputbox"
+        
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_NUMBER_OF_ACADEMIC_RECORDS"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_NUMBER_OF_ACADEMIC_RECORDS" 
+        
+        
+         required="true" 
+        filter="safehtml" /> 
+
+       <field name="phone_number" type="text" size="40" class="inputbox"
+        
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_PHONE_NUMBER"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_PHONE_NUMBER" 
+        
+         validate="tel" 
+        
+        filter="safehtml" /> 
+
+       <field name="photo" type="media"
+                
+            label="COM_STUDENT_LIST_FORM_LBL_TABLE1_PHOTO"
+            description="COM_STUDENT_LIST_FORM_DESC_TABLE1_PHOTO" 
+                
+                
+                
+            filter="raw"
+            directory="St_Photo" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" /> 
+
+ </fieldset> 
+
+ <fieldset 
+                        name="accesscontrol">
+                       <field name="asset_id" type="hidden" filter="unset" />
+                       <field name="rules"
+                            type="rules"
+                            label="JFIELD_RULES_LABEL"
+                            translate_label="false"
+                            filter="rules"
+                            validate="rules"
+                            class="inputbox"
+                            component="com_student_list"
+                            section="table1"
+                        />
+
+	</fieldset>
+
+</form>
